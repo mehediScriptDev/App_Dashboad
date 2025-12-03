@@ -3,10 +3,12 @@ import { Plus, BookOpen } from "lucide-react";
 import { MdOutlineDelete } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import FlashCardModal from "./Components/FlashCardModal";
+import CreateStudyGuideModal from "./Components/CreateStudyGuideModal";
 
 const Content = () => {
   const [activeTab, setActiveTab] = useState("study-guides");
   const [isFlashModalOpen, setIsFlashModalOpen] = useState(false);
+  const [isStudyModalOpen, setIsStudyModalOpen] = useState(false);
   const [studyGuides, setStudyGuides] = useState([
     { id: 1, author: "John Smith", subject: "SPI", chapters: 12, status: "Published" },
     { id: 2, author: "John Smith", subject: "SPI", chapters: 12, status: "Published" },
@@ -62,7 +64,7 @@ const Content = () => {
               <h2 className="text-2xl font-medium text-black mb-1">Study Guides</h2>
               <p className="text-base text-gray-600">Manage all study guide content</p>
             </div>
-            <button className="bg-[#FFBF23] text-black font-medium px-4 py-3 rounded-sm flex items-center gap-3 transition-colors">
+            <button onClick={() => setIsStudyModalOpen(true)} className="bg-[#FFBF23] text-black font-medium px-4 py-3 rounded-sm flex items-center gap-3 transition-colors">
               <Plus size={20} />
               Add Study Guide
             </button>
@@ -148,6 +150,7 @@ const Content = () => {
         </div>
       )}
       <FlashCardModal isOpen={isFlashModalOpen} onClose={() => setIsFlashModalOpen(false)} />
+      <CreateStudyGuideModal isOpen={isStudyModalOpen} onClose={() => setIsStudyModalOpen(false)} />
     </div>
   );
 };
