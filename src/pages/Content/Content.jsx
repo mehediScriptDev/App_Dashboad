@@ -28,7 +28,7 @@ const Content = () => {
   return (
     <div className="min-h-screen space-y-8">
       {/* Header */}
-      <div className="space-y-2">
+      <div className="space-y-1">
         <h1 className="lg:text-[32px] font-medium text-black">Content Management</h1>
         <p className="text-base font-normal text-[#696969]">Manage study guides and flashcard sets</p>
       </div>
